@@ -1,0 +1,9 @@
+openapi: "3.0.0"
+info: {}
+
+servers:
+  - url: 'http://localhost:8080/api'
+
+paths:
+  /item/{itemid}:
+    $ref: '../item/openapi.yml#/components/pathItems/ItemPath'

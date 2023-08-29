@@ -1,0 +1,38 @@
+openapi: "3.0.0"
+
+components:
+  parameters:
+    ItemID:
+      name: itemid
+      description: ID of an item.
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/ItemID'
+
+  schemas:
+    ItemID:
+      type: integer
+
+    Item:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          $ref: '#/components/schemas/ItemID'
+
+  pathItems:
+    ItemPath:
+      get:
+        summary: Get an item
+        operationId: getItem
+        parameters:
+          - $ref: '#/components/parameters/ItemID'
+        responses:
+          '200':
+            description: success
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Item'
