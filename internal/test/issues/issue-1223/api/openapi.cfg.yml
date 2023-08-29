@@ -1,0 +1,10 @@
+package: api
+generate:
+  models: true
+  echo-server: true
+  strict-server: true
+import-mapping:
+  ../item/openapi.yml: github.com/deepmap/oapi-codegen/internal/test/issues/issue-1223/item
+output: api.gen.go
+output-options:
+  skip-prune: true

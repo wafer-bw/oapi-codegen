@@ -1,0 +1,8 @@
+package: item
+generate:
+  models: true
+  echo-server: true
+  strict-server: true
+output: api.gen.go
+output-options:
+  skip-prune: true
